@@ -27,7 +27,9 @@ pipeline{
             steps{
                 withSonarQubeEnv('sonar-server') {
                     withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
-                        sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Reddit \
+                        sh ''' 
+                        $SCANNER_HOME/bin/sonar-scanner 
+                        -Dsonar.projectName=Reddit \
                         -Dsonar.projectKey=Reddit
                         -Dsonar.login=$SONAR_TOKEN \
                         -Dsonar.javascript.node.maxspace=4096 \
