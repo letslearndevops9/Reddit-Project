@@ -30,7 +30,7 @@ pipeline{
                         sh ''' 
                         $SCANNER_HOME/bin/sonar-scanner 
                         -Dsonar.projectName=Reddit \
-                        -Dsonar.projectKey=Reddit  \
+                        -Dsonar.projectKey=Reddit \
                         -Dsonar.login=$SONAR_TOKEN \
                         -Dsonar.javascript.node.maxspace=4096 \
                         -Dsonar.exclusions=node_modules/**,.next/**,dist/**,coverage/**
